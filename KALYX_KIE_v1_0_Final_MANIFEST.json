@@ -1,0 +1,27 @@
+{
+  "schema": "KALYX_RELEASE_MANIFEST01",
+  "release": "KALYX-KIE v1.0 Final",
+  "version": "1.0-kie-v1.0-final",
+  "basis": "KALYX-KIE v1.0 RC2",
+  "release_type": "final",
+  "runtime_change_policy": "No new runtime features compared to RC2; final versioning and release documentation only.",
+  "core_contracts": [
+    "KPROFILE01",
+    "KPROMPT01",
+    "KCONTRACT01",
+    "KIE01",
+    "KRESP01",
+    "KAUDIT01",
+    "KDISPATCH01",
+    "KWORKFLOW01"
+  ],
+  "official_scripts": [
+    "scripts/run_kalyx_v1_0_final_offline_reference.ps1",
+    "scripts/run_kalyx_v1_0_final_lmstudio_live.ps1",
+    "scripts/run_kalyx_v1_0_final_version_check.ps1"
+  ],
+  "expected_smoke": {
+    "ctest": "100% tests passed",
+    "lmstudio_path": "KRESP01 command workflow accepted, KDISPATCH01 sandbox_executed, KWORKFLOW01 status ok"
+  }
+}
