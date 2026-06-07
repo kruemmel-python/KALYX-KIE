@@ -1,0 +1,15 @@
+{
+  "schema": "KPROFILE01",
+  "name": "research.hypothesis_custom",
+  "domain": "research",
+  "intent": "hypothesis_report_custom",
+  "mode": "workflow",
+  "default_goal": "Erzeuge einen Forschungsbericht mit Fakten, Hypothesen, Unsicherheiten und Sandbox-Export.",
+  "description": "Custom-Forschungsprofil mit strikter Fakt/Hypothese-Trennung.",
+  "targets": ["export_document", "open_preview", "save_as"],
+  "required_order": ["export_document", "open_preview", "save_as"],
+  "workflow": true,
+  "max_steps": 8,
+  "default_mode": "markdown",
+  "default_theme": "scientific"
+}
