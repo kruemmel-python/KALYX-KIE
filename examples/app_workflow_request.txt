@@ -1,0 +1,1 @@
+Erzeuge eine gültige KALYX KRESP01 command response für einen mehrstufigen Sandbox-Workflow. Der Workflow soll nacheinander eine Markdown-Kopie exportieren, eine Vorschauanforderung schreiben und einen Save-As-Request als Sandbox-Artefakt erzeugen. Nutze ausschließlich erlaubte Aktionen. Keine OS-Befehle. Keine echten Dateien überschreiben.

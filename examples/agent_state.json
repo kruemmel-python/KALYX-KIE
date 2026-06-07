@@ -1,0 +1,6 @@
+{
+  "goal": "prepare_release",
+  "allowed_tools": ["generate_test_plan", "answer"],
+  "blocked": false,
+  "risk_budget": "medium"
+}

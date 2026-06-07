@@ -1,0 +1,1 @@
+Fasse README.md für neue Benutzer zusammen und erzeuge danach einen sicheren Markdown-Export in der Sandbox. Verwende dafür einen validierbaren KALYX-Workflow mit export_document, open_preview und save_as.

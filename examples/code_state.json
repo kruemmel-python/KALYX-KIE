@@ -1,0 +1,6 @@
+{
+  "compiler": "msvc",
+  "failing_test": "response_validation",
+  "observed_error": "unknown command was accepted",
+  "available_actions": ["propose_patch", "generate_test_plan", "answer"]
+}

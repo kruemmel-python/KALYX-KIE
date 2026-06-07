@@ -1,0 +1,8 @@
+{
+  "application": "MDraft",
+  "current_file": "notes.md",
+  "unsaved_changes": true,
+  "selected_text_available": true,
+  "available_exports": ["html", "pdf", "reveal"],
+  "available_themes": ["plain", "scientific", "dark"]
+}

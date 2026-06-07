@@ -1,0 +1,10 @@
+{
+  "npc": "Mira",
+  "role": "healer",
+  "service_locked": false,
+  "player_gold": 15,
+  "available_services": [
+    {"id": "small_heal", "price": 12},
+    {"id": "antidote", "price": 20}
+  ]
+}

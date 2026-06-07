@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KALYX-KIE v1.0 Final Documentation</title>
+<style>
+:root {
+  --bg:#030711; --panel:#081828dd; --panel2:#0c2136ee; --text:#eafcff; --muted:#9dbac6;
+  --cyan:#55e7ff; --green:#72ffb8; --violet:#b993ff; --amber:#ffd36a; --red:#ff6b9a;
+  --line:#55e7ff33;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; color:var(--text); font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, #55e7ff20, transparent 28%),
+    radial-gradient(circle at 85% 15%, #b993ff22, transparent 26%),
+    linear-gradient(140deg,#02040a,#071827 55%,#02040a);
+}
+body:before {
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.6;
+  background-image:linear-gradient(#55e7ff0b 1px,transparent 1px),linear-gradient(90deg,#55e7ff0b 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.wrap { max-width:1220px; margin:0 auto; padding:28px; }
+.hero {
+  border:1px solid var(--line); background:linear-gradient(135deg,#0b2239dd,#060d1bdd);
+  border-radius:34px; padding:46px; box-shadow:0 30px 110px #0009; position:relative; overflow:hidden;
+}
+.hero h1 { font-size:clamp(42px,7vw,86px); line-height:.88; letter-spacing:-.07em; margin:20px 0; }
+.hero p { color:#d5f6ff; font-size:20px; line-height:1.65; max-width:880px; }
+.badge { display:inline-flex; gap:8px; align-items:center; color:var(--green); border:1px solid #72ffb855; padding:8px 13px; border-radius:999px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:12px; background:#72ffb810; }
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:22px 0; }
+.card, section { border:1px solid var(--line); border-radius:24px; background:var(--panel); box-shadow:0 20px 80px #0008; }
+.card { padding:22px; }
+.card b { color:var(--cyan); display:block; font-size:18px; margin-bottom:8px; }
+.card p, p, li { color:#cfeaf2; line-height:1.7; }
+section { padding:32px; margin:22px 0; }
+h2 { margin-top:0; font-size:34px; letter-spacing:-.04em; }
+h3 { color:var(--green); }
+pre { overflow:auto; background:#020814f2; border:1px solid #55e7ff33; border-radius:18px; padding:18px; color:#eaffff; font:13px/1.55 Consolas, "Cascadia Code", monospace; }
+table { width:100%; border-collapse:collapse; margin:18px 0; }
+td, th { border-bottom:1px solid #55e7ff22; padding:13px; text-align:left; vertical-align:top; }
+th { color:var(--cyan); background:#55e7ff10; }
+.flow { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.step { border:1px solid #55e7ff33; border-radius:18px; padding:16px; background:#06111fcc; }
+.step b { color:var(--amber); display:block; }
+a { color:var(--cyan); }
+.ok { border-left:4px solid var(--green); background:#72ffb812; padding:16px; border-radius:14px; }
+.warn { border-left:4px solid var(--amber); background:#ffd36a12; padding:16px; border-radius:14px; }
+footer { text-align:center; color:var(--muted); padding:34px; }
+@media(max-width:900px){ .grid,.flow{grid-template-columns:1fr} .hero{padding:28px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<span class="badge">KALYX-KIE v1.0 Final</span>
+<h1>Prompt Authoring + Governance Runtime</h1>
+<p>KALYX-KIE verbindet Prompt-Erstellung, Contract-Synthesis, LLM-Response-Validierung, Strict Dispatch Gate, Workflow-Policy, Sandbox-Ausführung und Audit-Trail.</p>
+</header>
+
+<div class="grid">
+<div class="card"><b>Prompt-Pack</b><p>Aus Profil und Ziel entsteht ein versionierbares Prompt- und Contract-Paket.</p></div>
+<div class="card"><b>Validation</b><p>LLM-Antworten werden als KRESP01 geprüft und nur bei accepted=true dispatcht.</p></div>
+<div class="card"><b>Audit</b><p>KAUDIT01, KDISPATCH01 und KWORKFLOW01 dokumentieren den vollständigen Lauf.</p></div>
+</div>
+
+<section>
+<h2>Flow</h2>
+<div class="flow">
+<div class="step"><b>1 Profile</b><span>KPROFILE01</span></div>
+<div class="step"><b>2 Pack</b><span>KPROMPTPACK</span></div>
+<div class="step"><b>3 Envelope</b><span>KIE01</span></div>
+<div class="step"><b>4 Response</b><span>KRESP01</span></div>
+<div class="step"><b>5 Audit</b><span>KAUDIT/KDISPATCH</span></div>
+</div>
+</section>
+
+<section>
+<h2>Quick Start</h2>
+<pre>.\scripts\run_kalyx_v1_0_final_offline_reference.ps1
+.\scripts\run_kalyx_v1_0_final_lmstudio_live.ps1
+.\scripts\run_kalyx_v1_0_final_version_check.ps1</pre>
+<div class="ok">Erwartung: 130/130 Tests grün, KRESP accepted, Dispatch sandbox_executed, KWORKFLOW01 status ok.</div>
+</section>
+
+<section>
+<h2>Dateiformate</h2>
+<table>
+<tr><th>Format</th><th>Rolle</th></tr>
+<tr><td>KPROFILE01</td><td>Domain-Profil und Defaults.</td></tr>
+<tr><td>KPROMPT01</td><td>Menschlicher Prompt-Entwurf.</td></tr>
+<tr><td>KCONTRACT01</td><td>Maschinenlesbarer Governance-Vertrag.</td></tr>
+<tr><td>KIE01</td><td>Interaction Envelope für das LLM.</td></tr>
+<tr><td>KRESP01</td><td>Validierbare LLM-Antwort.</td></tr>
+<tr><td>KAUDIT01</td><td>Validierungs-Audit.</td></tr>
+<tr><td>KDISPATCH01</td><td>Dispatch-Audit.</td></tr>
+<tr><td>KWORKFLOW01</td><td>Workflow-Manifest.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>KALYX vs. Prompty</h2>
+<p>Prompty macht Prompt-Dateien ausführbar. KALYX macht Prompt-basierte LLM-Interaktionen zusätzlich kontrollierbar, validierbar, dispatchbar und auditierbar.</p>
+<pre>Prompty  = Prompt-Datei + Runtime
+KALYX-KIE = Prompt + Contract + Validation + Dispatch + Audit</pre>
+</section>
+
+<section>
+<h2>Dokumentationsstruktur</h2>
+<ul>
+<li><a href="docs/quickstart.md">Quick Start</a></li>
+<li><a href="docs/concepts.md">Concepts</a></li>
+<li><a href="docs/file-formats.md">File Formats</a></li>
+<li><a href="docs/cli-reference.md">CLI Reference</a></li>
+<li><a href="docs/security-model.md">Security Model</a></li>
+<li><a href="docs/prompty-comparison.md">Prompty Comparison</a></li>
+</ul>
+</section>
+
+<footer>KALYX-KIE v1.0 Final Documentation Pack · 2026-06-07</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "schema": "KPROFILE01",
+  "name": "custom.summary_export",
+  "domain": "app",
+  "intent": "custom_summary_export",
+  "mode": "workflow",
+  "default_goal": "Fasse ein Dokument für neue Benutzer zusammen und exportiere es sicher in die Sandbox.",
+  "description": "Benutzerdefiniertes App-Profil für Zusammenfassung plus Sandbox-Export.",
+  "targets": [
+    "export_document",
+    "open_preview",
+    "save_as"
+  ],
+  "required_order": [
+    "export_document",
+    "open_preview",
+    "save_as"
+  ],
+  "workflow": true,
+  "max_steps": 8,
+  "default_mode": "markdown",
+  "default_theme": "plain"
+}

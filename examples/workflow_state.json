@@ -1,0 +1,6 @@
+{
+  "ticket": "WF-1024",
+  "status": "triage",
+  "missing_fields": ["approver"],
+  "allowed_routes": ["finance_review", "ask_clarification"]
+}

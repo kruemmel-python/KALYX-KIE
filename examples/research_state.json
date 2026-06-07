@@ -1,0 +1,9 @@
+{
+  "experiment": "null_model_matrix",
+  "measurements": [
+    {"name": "self_score", "value": 0.82},
+    {"name": "rotated_null_mean", "value": 0.41}
+  ],
+  "null_model": "rotation",
+  "evidence_limit": "hypothesis_only"
+}
